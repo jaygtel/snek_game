@@ -1,0 +1,92 @@
+# =========================
+# Rust
+# =========================
+
+# Compiled output
+/target/
+
+# Keep Cargo.lock for applications.
+# If this is a library crate, you may choose to ignore it instead.
+# Cargo.lock
+
+# Rustfmt backup files
+**/*.rs.bk
+
+# =========================
+# macOS
+# =========================
+
+# Finder metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS thumbnails
+._*
+
+# Spotlight index
+.Spotlight-V100
+
+# Trash
+.Trashes
+
+# Volume info
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# AFP share folders
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# =========================
+# Editors & IDEs
+# =========================
+
+# VS Code
+.vscode/
+
+# JetBrains (IntelliJ / CLion / RustRover)
+.idea/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# =========================
+# Environment / Local config
+# =========================
+
+.env
+.env.*
+*.local
+
+# =========================
+# Logs
+# =========================
+
+*.log
+
+# =========================
+# Coverage / Profiling
+# =========================
+
+*.profraw
+*.profdata
+*.gcda
+*.gcno
+coverage/
+
+# =========================
+# direnv (if used)
+# =========================
+
+.direnv/
+
+# =========================
+# Rust Analyzer cache (rare but safe)
+# =========================
+
+.rust-analyzer/
