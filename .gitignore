@@ -90,3 +90,8 @@ coverage/
 # =========================
 
 .rust-analyzer/
+
+
+# Added by cargo
+
+/target
