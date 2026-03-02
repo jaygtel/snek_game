@@ -1,20 +1,20 @@
 fn main() {
-    let os_it_fun = false;
-    let num = -10;
-    // i32 --> signed integer of 32bits
-    // --> signed can hold positive or negative values
+    let custom_num = 98_000;
+    let hex_num = 0xfa;
+    let bin_num = 0b0010_1011;
+    let byte_num = b'A';
 
-    let small_num: u8 = 255;
-    // u8 --> unsigned integer of 8bits
-    // 2^8 -1
-    // the bigger the u value the more bits it can hold, for example u32 can hold max of 2^32 -1
+    println!("{}", custom_num); // 98000 - underscore is ignored and is just for easy reading
 
-    let small_num_2: i8 = 127;
-    // -2^7 --> 2^7 -1
-    // -128 --> 127
+    // 0x denotes a hex number
+    // this is calculated similar to the bin numbers, except using base16 instead of base2
+    println!("{}", hex_num); // 0xfa;
 
-    let sys_num: isize = -10;
-    let sys_numer_2: usize = 10;
-    // operating system related type
-    // the number of bits is determined by the system arch: e.g. 32bit or 64bit systems
+    // 0b denotes a binary number
+    // 0 0 1 0 1 0 1 1
+    // starting right to left each number above is calculated as 2^x
+    // i.e. 2^0, 2^1, 2^2, 2^3, 2^4, 2^5, 2^6, 2^7 and so on.
+    println!("{}", bin_num); // 0b0010_1011;
+
+    println!("{}", byte_num); // b'A';
 }
