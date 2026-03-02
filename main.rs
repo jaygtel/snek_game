@@ -1,12 +1,12 @@
 fn main() {
-    let float_num: f32 = 3.14;
-    let float_num_2: f64 = 3.2334327489;
+    let _float_num: f32 = 3.14;
+    let _float_num_2: f64 = 3.2334327489;
 
     let tup: (i32, &str, u8) = (20, "Hello", 1);
 
     println!("{}", tup.1);
 
-    let (a,b,c) = tup;
+    let (a,_b,_c) = tup;
     println!("{}", a);
 
     let x = [1,5,6,7];
