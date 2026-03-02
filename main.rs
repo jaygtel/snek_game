@@ -1,20 +1,18 @@
 fn main() {
-    let custom_num = 98_000;
-    let hex_num = 0xfa;
-    let bin_num = 0b0010_1011;
-    let byte_num = b'A';
+    let float_num: f32 = 3.14;
+    let float_num_2: f64 = 3.2334327489;
 
-    println!("{}", custom_num); // 98000 - underscore is ignored and is just for easy reading
+    let tup: (i32, &str, u8) = (20, "Hello", 1);
 
-    // 0x denotes a hex number
-    // this is calculated similar to the bin numbers, except using base16 instead of base2
-    println!("{}", hex_num); // 0xfa;
+    println!("{}", tup.1);
 
-    // 0b denotes a binary number
-    // 0 0 1 0 1 0 1 1
-    // starting right to left each number above is calculated as 2^x
-    // i.e. 2^0, 2^1, 2^2, 2^3, 2^4, 2^5, 2^6, 2^7 and so on.
-    println!("{}", bin_num); // 0b0010_1011;
+    let (a,b,c) = tup;
+    println!("{}", a);
 
-    println!("{}", byte_num); // b'A';
+    let x = [1,5,6,7];
+
+    println!("{}", x[2]);
+
+    let y = [2; 6]; // you get an array of 6 items but only 2s e.g: [2, 2, 2, 2, 2, 2]
+    println!("{}", y[5]);
 }
