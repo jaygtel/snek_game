@@ -10,11 +10,11 @@ fn a() {
 }
 
 fn b() {
-    pintln!("calling B")
+    println!("calling B");
 }
 
 fn c() {
-    println!("calling C")
+    println!("calling C");
 }
 
 fn d() {

@@ -1,14 +1,34 @@
 fn main() {
-    let a = 10;
-    let b = a;
-    let c = 15;
-    let d = (a + b);
-
-    println!("{}", d);
+    c();
+    d();
+    f();
 }
 
-fn add(x: u32, y: u32) -> u32 {
-    let sum = x + y;
-    // return sum
-    sum
+fn a() {
+    println!("calling A");
+    e();
 }
+
+fn b() {
+    println!("calling B");
+}
+
+fn c() {
+    println!("calling C");
+}
+
+fn d() {
+    println!("calling D");
+    a();
+}
+
+fn e() {
+    println!("calling E");
+}
+
+fn f() {
+    println!("calling F");
+    b();
+}
+
+// xxd -g1 main
