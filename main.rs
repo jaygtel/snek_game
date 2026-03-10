@@ -1,19 +1,12 @@
 fn main() {
-    let message = String::from("hello");
-    let message = extend_message(message);
-
-    let age = 30;
-    extend_age(age);
-    println!("{}", age);
+    let message = String::from("Hello");
+    let message_2: &String = &message;
+    // message_2 is not owner of data
+    // message_2 is "borrowing" a reference to message
 
     println!("{}", message);
+    println!("{}", message_2);
 }
-
-fn extend_message(mut a: String) -> String {
-    a.push.str(" World");
-    a
-}
-
-fn extend_age(mut a: u32) {
-    a += 100;
-}
+// message and message_2 going out of the scope
+// message_2 is not a dropped because it doesn't have ownership of what it returns
+// message is dropped
