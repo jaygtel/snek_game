@@ -7,4 +7,3 @@ fn main() {
     println!("{}", message);
     println!("{}", message_3);
 }
-
