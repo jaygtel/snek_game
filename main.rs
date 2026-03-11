@@ -1,10 +1,10 @@
 fn main() {
     let mut message = String::from("Hello");
-    let slice = &message[2..4]; // 2 -> 4
+    let message_3 = message.clone();
 
     message.clear();
 
-    printlin!("{}", slice);
+    println!("{}", message);
+    println!("{}", message_3);
 }
 
-fn move_me(val: String) {}
