@@ -1,8 +1,10 @@
 fn main() {
     let mut message = String::from("Hello");
-    let slice = &message[2..4]; // 2 -> 3
-    // H E L L O
-    // 0 1 2 3 4
+    let slice = &message[2..4]; // 2 -> 4
 
-    println!("{}", slice);
+    message.clear();
+
+    printlin!("{}", slice);
 }
+
+fn move_me(val: String) {}
