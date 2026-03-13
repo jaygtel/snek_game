@@ -1,9 +1,6 @@
-fn main() {
-    let mut message = String::from("Hello");
-    let message_3 = message.clone();
+fn main () {
+    let num = 32;
+    let num_3 = Box::new(100);
 
-    message.clear();
-
-    println!("{}", message);
-    println!("{}", message_3);
+    println!("{}", num_3);
 }
