@@ -10,10 +10,11 @@ impl Person {
         println!("some_function");
     }
 
-    // METHOD
-    // first parameter is always self, which represents the instance of the struct
-    // the method is being called on
-    // within the impl block the type Self is an alias for the current type
+/*
+    METHOD
+    first parameter is always self, which represents the instance of the struct that the method is
+    being called on.  within the impl block the type Self is an alias for the current type
+*/
     fn display_age(&self) {
         println!("Current Age: {}", self.age);
     }
