@@ -13,13 +13,13 @@ struct Person {
 
 impl Person {
     fn new() -> Person {
-        Person  {
+        Person {
             name: "Default".to_string(),
             last_name: "Default".to_string(),
             age: 0,
-            id: PersonId::IdentityCard(540, 230, 100)
+            id: PersonId::IdentityCard(540, 330, 100)
+        }
     }
-}
 
     fn from(name: String, last_name: String, age: u32, id: PersonId) -> Person {
         Person {
@@ -28,11 +28,14 @@ impl Person {
             age,
             id
         }
-
     }
 
-fn change_age(&mut self, new_age: u32) {
+    fn change_age(&mut self, new_age: u32) {
         self.age = new_age;
+    }
+
+    fn display_info(&self) {
+        println!("{} {} {} {:?}", self.name, self.last_name, self.age, self.id)
     }
 }
 
@@ -45,6 +48,27 @@ fn main() {
         PersonId::Passport(123172371)
     );
 
-    println!("{:?}", person.id);
-    println!("{:?}", person_2.id);
+    person.change_age(38);
+    person.display_info();
+
+    //println!("{:?}", person.id);
+    //println!("{:?}", person_2.id);
+
+    // PersonId::IdentityCard(540, 320, 100)
+    check_person_id(person.id);
+    check_person_id(person_2.id);
+}
+
+fn check_person_id(id: PersonId) {
+
+    let result = match id {
+        PersonId::IdentityCard(x, y, z) => {
+            y
+        },
+        PersonId::Passport(val) => {
+            val
+        }
+    };
+
+    println!("Result: {}", result);
 }
