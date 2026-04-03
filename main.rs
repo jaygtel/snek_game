@@ -1,3 +1,10 @@
+trait Log {
+    fn display_info(&self);
+    fn alert_something(&self) {
+        println!("Default implementation!")
+    }
+}
+
 #[derive(Debug)]
 enum PersonId {
     Passport(u32),
@@ -13,13 +20,29 @@ struct Person {
 
 struct Animal(String);
 
+impl Log for Animal {
+    fn display_info(&self) {
+        println!("{}", self.0)
+    }
+
+    fn alert_something(&self) {
+        println!("ANIMAL implementation!")
+    }
+}
+
+impl Log for Person {
+    fn display_info(&self) {
+        println!("{} {} {} {:?}", self.name, self.last_name, self.age, self.id)
+    }
+}
+
 impl Person {
     fn new() -> Person {
         Person {
             name: "Default".to_string(),
             last_name: "Default".to_string(),
             age: 0,
-            id: PersonId::IdentityCard(540, 330, 100)
+            id: PersonId::IdentityCard(540, 320, 100)
         }
     }
 
@@ -35,54 +58,14 @@ impl Person {
     fn change_age(&mut self, new_age: u32) {
         self.age = new_age;
     }
-
-    fn display_info(&self) {
-        println!("{} {} {} {:?}", self.name, self.last_name, self.age, self.id)
-    }
 }
 
 fn main() {
     let mut person = Person::new();
-    let person_2 = Person::from(
-        String::from("John"),
-        String::from("Snow"),
-        32,
-        PersonId::Passport(123172371)
-    );
-
-    person.change_age(38);
-    person.display_info();
-
-    //println!("{:?}", person.id);
-    //println!("{:?}", person_2.id);
-
-    // PersonId::IdentityCard(540, 320, 100)
-    check_person_id(person.id);
-    check_person_id(person_2.id);
-}
-
-fn check_person_id(id: PersonId) {
-
-    if let PersonId::Passport(num) = id {
-        println!("Matching Passport for: {}", num);
-    } else {
-        println!("Passport Number Doesnt Match!");
-    }
-
-    let result = match id {
-        PersonId::IdentityCard(x, y, z) => {
-            y
-        },
-        PersonId::Passport(val) => {
-            val
-        }
-    };
-
     let animal = Animal(String::from("dog"));
 
-    let Animal(animal_type) = animal;
+    person.change_age(38);
 
-    println!("{}", animal_type);
-
-    println!("Result: {}", result);
+    person.alert_something();
+    animal.alert_something();
 }
