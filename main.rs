@@ -11,6 +11,8 @@ struct Person {
     id: PersonId,
 }
 
+struct Animal(String);
+
 impl Person {
     fn new() -> Person {
         Person {
@@ -75,6 +77,12 @@ fn check_person_id(id: PersonId) {
             val
         }
     };
+
+    let animal = Animal(String::from("dog"));
+
+    let Animal(animal_type) = animal;
+
+    println!("{}", animal_type);
 
     println!("Result: {}", result);
 }
